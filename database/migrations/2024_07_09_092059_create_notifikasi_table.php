@@ -2,7 +2,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNotifikasiTable extends Migration
+class Notifikasi extends Migration
 {
     /**
      * Run the migrations.

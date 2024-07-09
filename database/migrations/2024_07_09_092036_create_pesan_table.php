@@ -2,7 +2,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesanTable extends Migration
+class Pesan extends Migration
 {
     /**
      * Run the migrations.

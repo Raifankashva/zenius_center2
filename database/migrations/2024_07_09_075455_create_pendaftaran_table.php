@@ -3,7 +3,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePendaftaranTable extends Migration
+class Pendaftaran extends Migration
 {
     /**
      * Run the migrations.
