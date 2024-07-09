@@ -2,7 +2,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePenggunaTable extends Migration
+class CreateCicilanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -11,12 +11,11 @@ class CreatePenggunaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengguna', function (Blueprint $table) {
+        Schema::create('cicilan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('kata_sandi');
-            $table->enum('role', ['admin', 'petugas', 'siswa']);
+            $table->foreignId('pembayaran_id')->constrained('pembayaran')->onDelete('cascade');
+            $table->decimal('jumlah', 8, 2);
+            $table->timestamp('dibayar_pada');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePenggunaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengguna');
+        Schema::dropIfExists('cicilan');
     }
 }

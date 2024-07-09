@@ -1,9 +1,8 @@
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePendaftaranTable extends Migration
+class CreateSesiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +11,12 @@ class CreatePendaftaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('pendaftaran', function (Blueprint $table) {
+        Schema::create('sesi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pengguna_id')->constrained('pengguna')->onDelete('cascade');
-            $table->foreignId('kursus_id')->constrained('kursus')->onDelete('cascade');
-            $table->timestamp('terdaftar_pada');
-            $table->timestamp('selesai_pada')->nullable();
+            $table->dateTime('waktu_mulai');
+            $table->dateTime('waktu_selesai');
+            $table->enum('status', ['aktif', 'selesai', 'batal']);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreatePendaftaranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pendaftaran');
+        Schema::dropIfExists('sesi');
     }
 }
