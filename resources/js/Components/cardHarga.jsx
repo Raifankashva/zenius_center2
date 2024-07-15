@@ -26,7 +26,7 @@ const CardHarga = ({ title, price, facilities, sampai , program}) => {
         {facilities.map((facility, index) => (
             <li key={index} className="flex items-center">
                 <svg
-                    className="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                    className="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -47,7 +47,7 @@ const CardHarga = ({ title, price, facilities, sampai , program}) => {
         {program.map((program, index) => (
             <li key={index} className="flex items-center">
                 <svg
-                    className="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500"
+                    className="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -64,7 +64,7 @@ const CardHarga = ({ title, price, facilities, sampai , program}) => {
     <p className="text-xl font-medium text-gray-500 mb-4 relative">{sampai}</p>
     <button
         type="button"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center relative"
+        className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center relative"
     >
         Pilih Kelas
     </button>

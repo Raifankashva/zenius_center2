@@ -46,8 +46,8 @@ const HomeComponent = ({ displayText }) => {
                 <div className="relative overflow-hidden bg-gray-100 text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8" data-aos="fade-up">
-                            <h1 className="text-4xl font-bold mb-4">
-                                {dataPisa.title}
+                            <h1 className="text-4xl font-bold mb-4 text-purple-900">
+                                Skor <span className="text-yellow-400"> PISA 2023</span> 
                             </h1>
                         </div>
                         <div className="relative h-96" data-aos="fade-up">
@@ -58,8 +58,8 @@ const HomeComponent = ({ displayText }) => {
                         </div>
                         <div className="relative overflow-hidden bg-white shadow-lg text-black py-16">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <h1 className="text-4xl font-bold text-center mb-12">
-                                    Faktor-faktor PISA
+                                <h1 className="text-4xl font-bold text-center mb-12 text-purple-800">
+                                    Faktor-faktor <span className="text-yellow-400">PISA</span>
                                 </h1>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                     <img
