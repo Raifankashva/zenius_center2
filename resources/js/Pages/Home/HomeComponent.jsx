@@ -9,15 +9,16 @@ import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import dataPisa from "./bardataPISA"; // Mengimpor dataPisa
-import dataProblems from "./dataProblem"; // Mengimpor dataProblems
+import dataPisa from "./bardataPISA";
+import dataProblems from "./dataProblem";
 import WhatsAppLink from "./WhatsAppLink";
 import contentData from "./contentData";
 import komponen from "./KomponenBelajar";
-import CardHarga from "@/Components/cardHarga"; // Sesuaikan dengan path import yang benar
-import DataHarga from "./DataHarga"; // Sesuaikan dengan path import yang benar
+import CardHarga from "@/Components/cardHarga";
+import DataHarga from "./DataHarga";
 import { Link } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
+import TestimoniData from "./TestimoniData";
 
 const HomeComponent = ({ displayText }) => {
     useEffect(() => {
@@ -42,7 +43,7 @@ const HomeComponent = ({ displayText }) => {
                     </div>
                 </div>
 
-                <div className="relative overflow-hidden bg-white text-black py-16">
+                <div className="relative overflow-hidden bg-gray-100 text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8" data-aos="fade-up">
                             <h1 className="text-4xl font-bold mb-4">
@@ -55,14 +56,14 @@ const HomeComponent = ({ displayText }) => {
                                 options={dataPisa.barOptions}
                             />
                         </div>
-                        <div className="relative overflow-hidden bg-white text-black py-16">
+                        <div className="relative overflow-hidden bg-white shadow-lg text-black py-16">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <h1 className="text-4xl font-bold text-center mb-12">
                                     Faktor-faktor PISA
                                 </h1>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                     <img
-                                        src="./images/PISA.png" // Ganti dengan path gambar logo
+                                        src="./images/PISA.png"
                                         alt="Logo"
                                         className="absolute inset-0 w-1/2  opacity-10 m-auto"
                                     />
@@ -71,7 +72,7 @@ const HomeComponent = ({ displayText }) => {
                                             key={index}
                                             data-aos="fade-up"
                                             data-aos-delay={`${index * 100}`}
-                                            className="text-lg mb-8 text-gray-600 bg-white hover:shadow-2xl shadow-xl p-3 text-center"
+                                            className="text-lg mb-8 text-gray-600 bg-white hover:shadow-2xl shadow-xl p-3 text-center rounded-lg"
                                         >
                                             <h2 className="text-xl font-semibold mb-2">
                                                 <b>{item.title}</b>
@@ -87,7 +88,7 @@ const HomeComponent = ({ displayText }) => {
 
                 <div className="bg-white text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-white">
                             <div
                                 className="md:col-span-3 text-center"
                                 data-aos="fade-up"
@@ -146,9 +147,9 @@ const HomeComponent = ({ displayText }) => {
                             </div>
                         </div>
                         <img
-                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                            src="./images/Reverse.png"
                             alt="Logo"
-                            className="absolute inset-0 w-1/2  opacity-10 m-auto"
+                            className="absolute inset-0   opacity-10 m-auto"
                         />
                         {contentData.map((data, index) => (
                             <div
@@ -216,8 +217,8 @@ const HomeComponent = ({ displayText }) => {
                 </div>
                 <div className="relative overflow-hidden bg-white text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <img
-                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                        <img
+                            src="./images/Reverse.png"
                             alt="Logo"
                             className="absolute inset-0 w-1/2  opacity-10 m-auto"
                         />
@@ -269,6 +270,11 @@ const HomeComponent = ({ displayText }) => {
                 </div>
                 <div className="bg-white text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <img
+                            src="./images/Reverse.png"
+                            alt="Logo"
+                            className="absolute inset-0 w-1/4 opacity-10 m-auto"
+                        />
                         <div className="text-center" data-aos="fade-up">
                             <h1 className="text-4xl font-bold mb-4">
                                 Testimoni
@@ -286,34 +292,22 @@ const HomeComponent = ({ displayText }) => {
                             autoPlay={true}
                             interval={5000}
                         >
-                            <div className="testimonial-item">
-                                <p className="text-lg italic">
-                                    "Sangat membantu anak saya dalam belajar.
-                                    Guru-guru sangat profesional dan sabar."
-                                </p>
-                                <h2 className="text-xl font-semibold mt-4">
-                                    - Budi, Orang Tua Siswa
-                                </h2>
-                            </div>
-                            <div className="testimonial-item">
-                                <p className="text-lg italic">
-                                    "Materi yang diberikan sangat mudah
-                                    dipahami. Saya berhasil naik peringkat di
-                                    kelas."
-                                </p>
-                                <h2 className="text-xl font-semibold mt-4">
-                                    - Ani, Siswa SMA
-                                </h2>
-                            </div>
-                            <div className="testimonial-item">
-                                <p className="text-lg italic">
-                                    "Fasilitas dan layanannya sangat lengkap.
-                                    Anak saya sangat senang belajar di sini."
-                                </p>
-                                <h2 className="text-xl font-semibold mt-4">
-                                    - Ratna, Orang Tua Siswa
-                                </h2>
-                            </div>
+                            {TestimoniData.map((testimonial, index) => (
+                                <div key={index} className="testimonial-item">
+                                    <img
+                                        src={testimonial.image}
+                                        alt={`${testimonial.name} photo`}
+                                        className="w-32 h-32 rounded-full mx-auto mb-4"
+                                    />
+
+                                    <p className="text-lg italic">
+                                        "{testimonial.text}"
+                                    </p>
+                                    <h2 className="text-xl font-semibold mt-4">
+                                        - {testimonial.name}, {testimonial.role}
+                                    </h2>
+                                </div>
+                            ))}
                         </Carousel>
                     </div>
                 </div>

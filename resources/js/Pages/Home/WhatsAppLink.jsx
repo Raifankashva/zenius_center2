@@ -15,10 +15,16 @@ const WhatsAppLink = () => {
                         Hubungi Kami
                     </h1>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
                         <div
                             className="col-span-2 bg-white rounded-lg shadow-md p-6"
                             data-aos="fade-right"
                         >
+                            <img
+                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                            alt="Logo"
+                            className="absolute inset-0 w-1/4  opacity-10 m-auto"
+                        />
                             <h2 className="text-2xl font-semibold mb-4">
                                 Kirim Pesan
                             </h2>
@@ -86,6 +92,11 @@ const WhatsAppLink = () => {
                             <h2 className="text-2xl font-semibold mb-4">
                                 Hubungi langsung
                             </h2>
+                            <img
+                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                            alt="Logo"
+                            className="absolute inset-0 w-1/2  opacity-10 m-auto"
+                        />
                             <p className="text-lg mb-4">
                                 Telepon: +62 818936487
                                 <br />
@@ -99,7 +110,7 @@ const WhatsAppLink = () => {
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2"
+                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mt-2"
                             >
                                 WhatsApp Kami
                             </a>

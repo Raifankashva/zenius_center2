@@ -2,22 +2,22 @@ const KomponenBelajar = [
     {
         id: 1,
         imgSrc: "/images/layanan/layanan1.png",
-        imgAlt: "Komponen Fundamental Learning",
-        title: "Zenius Center",
+        title: "Komponen Fundamental Learning",
+        imgAlt: "Zenius Center",
         text: "Layanan 1",
     },
     {
         id: 2,
         imgSrc: "/images/layanan/layanan2.png",
-        imgAlt: "Kelas Offline Yang Interaktif dan Nyaman",
-        title: "Zenius Center",
+        title: "Kelas Offline Yang Interaktif dan Nyaman",
+        imgAlt: "Zenius Center",
         text: "Layanan 2",
     },
     {
         id: 3,
         imgSrc: "/images/layanan/layanan3.png",
-        imgAlt: "Pendalaman materi pelajaran sekolah",
-        title: "Zenius Center",
+        title: "Pendalaman materi pelajaran sekolah",
+        imgAlt: "Zenius Center",
         text: "Layanan 3",
     },
     {

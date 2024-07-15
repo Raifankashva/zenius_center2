@@ -16,6 +16,10 @@ const AboutUs = () => {
         setShowVideo(true);
     };
 
+    const handleCloseClick = () => {
+        setShowVideo(false);
+    };
+
     return (
         <AppLayout>
             <div className="bg-gray-100 text-gray-800 p-8">
@@ -218,14 +222,14 @@ const AboutUs = () => {
                     <div className="relative overflow-hidden bg-white text-black py-16">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <h1 className="text-4xl font-bold text-center mb-12">
-                                Video Perusahaan 
+                                Video Perusahaan
                             </h1>
                             <div className="text-center mb-8">
                                 <button
                                     onClick={handleStartClick}
-                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5"
+                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 "
                                 >
-                                    Start
+                                    Play
                                 </button>
                             </div>
                             {showVideo && (
@@ -239,6 +243,14 @@ const AboutUs = () => {
                                     autoPlay
                                 ></iframe>
                             )}
+                            <div className="text-center mt-8">
+                                <button
+                                    onClick={handleCloseClick}
+                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 "
+                                >
+                                    Tutup
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
