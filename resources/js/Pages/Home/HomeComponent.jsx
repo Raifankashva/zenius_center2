@@ -14,9 +14,10 @@ import dataProblems from "./dataProblem"; // Mengimpor dataProblems
 import WhatsAppLink from "./WhatsAppLink";
 import contentData from "./contentData";
 import komponen from "./KomponenBelajar";
-import CardHarga from '@/Components/cardHarga'; // Sesuaikan dengan path import yang benar
-import DataHarga from './DataHarga'; // Sesuaikan dengan path import yang benar
-import { Link } from '@inertiajs/react';
+import CardHarga from "@/Components/cardHarga"; // Sesuaikan dengan path import yang benar
+import DataHarga from "./DataHarga"; // Sesuaikan dengan path import yang benar
+import { Link } from "@inertiajs/react";
+import Footer from "@/Components/Footer";
 
 const HomeComponent = ({ displayText }) => {
     useEffect(() => {
@@ -26,7 +27,7 @@ const HomeComponent = ({ displayText }) => {
     return (
         <div className="relative">
             <AppLayout>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto ">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                         <div
                             className="md:col-span-3 text-center z-20"
@@ -41,7 +42,7 @@ const HomeComponent = ({ displayText }) => {
                     </div>
                 </div>
 
-                <div className="bg-white text-gray-800 relative z-30 py-16">
+                <div className="relative overflow-hidden bg-white text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8" data-aos="fade-up">
                             <h1 className="text-4xl font-bold mb-4">
@@ -54,23 +55,36 @@ const HomeComponent = ({ displayText }) => {
                                 options={dataPisa.barOptions}
                             />
                         </div>
-                        <div
-                            data-aos="fade-up"
-                            className="text-lg mb-8 text-gray-600 bg-white hover:shadow-2xl shadow-xl p-3"
-                        >
-                            Rendahnya peringkat Indonesia dalam PISA atau studi
-                            serupa dapat disebabkan oleh beberapa faktor yang
-                            kompleks:
-                            <ul className="list-decimal list-inside">
-                                {dataPisa.description.map((item, index) => (
-                                    <li key={index}>
-                                        <b>{item.title}</b>: {item.text}
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="relative overflow-hidden bg-white text-black py-16">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <h1 className="text-4xl font-bold text-center mb-12">
+                                    Faktor-faktor PISA
+                                </h1>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                                    <img
+                                        src="./images/PISA.png" // Ganti dengan path gambar logo
+                                        alt="Logo"
+                                        className="absolute inset-0 w-1/2  opacity-10 m-auto"
+                                    />
+                                    {dataPisa.description.map((item, index) => (
+                                        <div
+                                            key={index}
+                                            data-aos="fade-up"
+                                            data-aos-delay={`${index * 100}`}
+                                            className="text-lg mb-8 text-gray-600 bg-white hover:shadow-2xl shadow-xl p-3 text-center"
+                                        >
+                                            <h2 className="text-xl font-semibold mb-2">
+                                                <b>{item.title}</b>
+                                            </h2>
+                                            <p>{item.text}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
                 <div className="bg-white text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -119,7 +133,7 @@ const HomeComponent = ({ displayText }) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white text-gray-800 relative z-30 py-16">
+                <div className="bg-gray-100 text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                             <div
@@ -131,6 +145,11 @@ const HomeComponent = ({ displayText }) => {
                                 </h1>
                             </div>
                         </div>
+                        <img
+                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                            alt="Logo"
+                            className="absolute inset-0 w-1/2  opacity-10 m-auto"
+                        />
                         {contentData.map((data, index) => (
                             <div
                                 key={data.id}
@@ -195,8 +214,13 @@ const HomeComponent = ({ displayText }) => {
                         ))}
                     </div>
                 </div>
-                <div className="relative overflow-hidden bg-gray-100 text-black py-16">
+                <div className="relative overflow-hidden bg-white text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <img
+                            src="./images/Reverse.png" // Ganti dengan path gambar logo
+                            alt="Logo"
+                            className="absolute inset-0 w-1/2  opacity-10 m-auto"
+                        />
                         <h1 className="text-4xl font-bold text-center mb-12">
                             Komponen Belajar
                         </h1>
@@ -223,26 +247,26 @@ const HomeComponent = ({ displayText }) => {
                     </div>
                 </div>
                 <div className="bg-gray-100 text-gray-800 relative z-30 py-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center" data-aos="fade-up">
-                    <h1 className="text-4xl font-bold mb-4">
-                        Biaya Investasi T.P 2024-2025
-                    </h1>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center" data-aos="fade-up">
+                            <h1 className="text-4xl font-bold mb-4">
+                                Biaya Investasi T.P 2024-2025
+                            </h1>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {DataHarga.map((kelas) => (
+                                <CardHarga
+                                    key={kelas.id}
+                                    title={kelas.title}
+                                    price={kelas.price}
+                                    facilities={kelas.facilities}
+                                    sampai={kelas.sampai}
+                                    program={kelas.program}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {DataHarga.map((kelas) => (
-                        <CardHarga
-                            key={kelas.id}
-                            title={kelas.title}
-                            price={kelas.price}
-                            facilities={kelas.facilities}
-                            sampai={kelas.sampai}
-                            program={kelas.program}
-                        />
-                    ))}
-                </div>
-            </div>
-        </div>
                 <div className="bg-white text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center" data-aos="fade-up">
@@ -294,99 +318,7 @@ const HomeComponent = ({ displayText }) => {
                     </div>
                 </div>
 
-                <div className="bg-gray-100 py-16 relative z-20">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold text-center mb-12">
-                            Hubungi Kami
-                        </h1>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div
-                                className="col-span-2 bg-white rounded-lg shadow-md p-6"
-                                data-aos="fade-right"
-                            >
-                                <h2 className="text-2xl font-semibold mb-4">
-                                    Kirim Pesan
-                                </h2>
-                                <form id="Contact">
-                                    <div className="mb-4">
-                                        <label
-                                            htmlFor="name"
-                                            className="block text-sm font-medium text-gray-700"
-                                        >
-                                            Nama
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                            placeholder="Nama Anda"
-                                        />
-                                    </div>
-                                    <div className="mb-4">
-                                        <label
-                                            htmlFor="email"
-                                            className="block text-sm font-medium text-gray-700"
-                                        >
-                                            Email
-                                        </label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            autoComplete="email"
-                                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                            placeholder="Email Anda"
-                                        />
-                                    </div>
-                                    <div className="mb-4">
-                                        <label
-                                            htmlFor="message"
-                                            className="block text-sm font-medium text-gray-700"
-                                        >
-                                            Pesan
-                                        </label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            rows="4"
-                                            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                            placeholder="Pesan Anda"
-                                        ></textarea>
-                                    </div>
-                                    <div className="text-center">
-                                        <button
-                                            type="submit"
-                                            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                        >
-                                            Kirim Pesan
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                            <div
-                                className="bg-white rounded-lg shadow-md p-6 text-center"
-                                data-aos="fade-left"
-                            >
-                                <h2 className="text-2xl font-semibold mb-4">
-                                    Hubungi langsung
-                                </h2>
-                                <p className="text-lg mb-4">
-                                    Telepon: +62 812-8049-xxxx
-                                    <br />
-                                    Email: example@example.com
-                                    <br />
-                                    Alamat: Jl. RS. Fatmawati Raya No.3,
-                                    RT.3/RW.5, Cilandak Bar., Kec. Cilandak,
-                                    Kota Jakarta Selatan, Daerah Khusus Ibukota
-                                    Jakarta 12430
-                                </p>
-                                <WhatsAppLink />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <WhatsAppLink />
                 <div
                     className="md:col-span-1 text-center relative top-2"
                     data-aos="fade-left"
@@ -403,7 +335,7 @@ const HomeComponent = ({ displayText }) => {
                         ></iframe>
                     </div>
                 </div>
-                
+                <Footer />
             </AppLayout>
         </div>
     );

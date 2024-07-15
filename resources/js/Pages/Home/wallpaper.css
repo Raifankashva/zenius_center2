@@ -61,3 +61,8 @@
     opacity: 0;
     transform: translateY(-20px);
 }
+
+.transition-max-height {
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}

@@ -71,7 +71,6 @@ const Navbar = () => {
                             >
                                 About Us
                             </NavLink>
-                            {/* Perbaiki onClick pada NavLink */}
                             <NavLink
                                 className='text-yellow-400 hover:text-yellow-800    '
                                 onClick={scrollToContact}

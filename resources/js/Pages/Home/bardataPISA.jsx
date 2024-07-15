@@ -14,21 +14,21 @@ const dataPisa = {
         datasets: [
             {
                 label: "Matematika - First Data",
-                backgroundColor: "rgba(75,192,192,1)",
+                backgroundColor: "#248AB4",
                 borderColor: "rgba(0,0,0,1)",
                 borderWidth: 2,
                 data: [366, 442, 575, 409, 394, 355, 496],
             },
             {
                 label: "Membaca - Second Data",
-                backgroundColor: "rgba(153,102,255,1)",
+                backgroundColor: "#a769c0",
                 borderColor: "rgba(0,0,0,1)",
                 borderWidth: 2,
                 data: [359, 492, 534, 338, 379, 374, 462],
             },
             {
                 label: "Sains - Third Data",
-                backgroundColor: "rgba(255,159,64,1)",
+                backgroundColor: "#ffc007",
                 borderColor: "rgba(0,0,0,1)",
                 borderWidth: 2,
                 data: [383, 446, 561, 416, 409, 356, 472],
