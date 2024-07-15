@@ -58,8 +58,8 @@ const HomeComponent = ({ displayText }) => {
                         </div>
                         <div className="relative overflow-hidden bg-white shadow-lg text-black py-16">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <h1 className="text-4xl font-bold text-center mb-12">
-                                    Faktor-faktor PISA
+                                <h1 className="text-4xl font-bold text-center mb-12 text-purple-800">
+                                    Faktor-faktor <span className="text-yellow-400">PISA</span>
                                 </h1>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                     <img
