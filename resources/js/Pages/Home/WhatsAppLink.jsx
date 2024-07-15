@@ -40,7 +40,7 @@ const WhatsAppLink = () => {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-purple-600 focus:border-purple-600 sm:text-sm"
                                         placeholder="Nama Anda"
                                     />
                                 </div>
@@ -56,7 +56,7 @@ const WhatsAppLink = () => {
                                         id="email"
                                         name="email"
                                         autoComplete="email"
-                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-purple-600 focus:border-purple-600 sm:text-sm"
                                         placeholder="Email Anda"
                                     />
                                 </div>
@@ -71,14 +71,14 @@ const WhatsAppLink = () => {
                                         id="message"
                                         name="message"
                                         rows="4"
-                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-purple-600 focus:border-purple-600 sm:text-sm"
                                         placeholder="Pesan Anda"
                                     ></textarea>
                                 </div>
                                 <div className="text-center">
                                     <button
                                         type="submit"
-                                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-500 hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                                     >
                                         Kirim Pesan
                                     </button>
@@ -92,11 +92,7 @@ const WhatsAppLink = () => {
                             <h2 className="text-2xl font-semibold mb-4">
                                 Hubungi langsung
                             </h2>
-                            <img
-                            src="./images/Reverse.png" // Ganti dengan path gambar logo
-                            alt="Logo"
-                            className="absolute inset-0 w-1/2  opacity-10 m-auto"
-                        />
+                           
                             <p className="text-lg mb-4">
                                 Telepon: +62 818936487
                                 <br />
@@ -110,7 +106,7 @@ const WhatsAppLink = () => {
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mt-2"
+                                className="text-white bg-gradient-to-r from-purple-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mt-2"
                             >
                                 WhatsApp Kami
                             </a>

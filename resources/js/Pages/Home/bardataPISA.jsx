@@ -1,6 +1,5 @@
 // dataPisa.js
 const dataPisa = {
-    title: "Skor PISA 2023",
     barData: {
         labels: [
             "Indonesia (74)",
