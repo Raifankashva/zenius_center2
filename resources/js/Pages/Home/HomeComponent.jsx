@@ -20,13 +20,23 @@ import { Link } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
 import TestimoniData from "./TestimoniData";
 
+const chunkArray = (arr, size) => {
+    const chunkedArr = [];
+    for (let i = 0; i < arr.length; i += size) {
+        chunkedArr.push(arr.slice(i, i + size));
+    }
+    return chunkedArr;
+};
+
 const HomeComponent = ({ displayText }) => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
 
+    const groupedTestimonials = chunkArray(TestimoniData, 4);
+
     return (
-        <div className="relative">
+                <div className="relative">
             <AppLayout>
                 <div className="mx-auto ">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -47,7 +57,11 @@ const HomeComponent = ({ displayText }) => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8" data-aos="fade-up">
                             <h1 className="text-4xl font-bold mb-4 text-purple-900">
-                                Skor <span className="text-yellow-400"> PISA 2023</span> 
+                                Skor{" "}
+                                <span className="text-yellow-400">
+                                    {" "}
+                                    PISA 2023
+                                </span>
                             </h1>
                         </div>
                         <div className="relative h-96" data-aos="fade-up">
@@ -59,7 +73,10 @@ const HomeComponent = ({ displayText }) => {
                         <div className="relative overflow-hidden bg-white shadow-lg text-black py-16">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <h1 className="text-4xl font-bold text-center mb-12 text-purple-800">
-                                    Faktor-faktor <span className="text-yellow-400">PISA</span>
+                                    Faktor-faktor{" "}
+                                    <span className="text-yellow-400">
+                                        PISA
+                                    </span>
                                 </h1>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                     <img
@@ -93,7 +110,7 @@ const HomeComponent = ({ displayText }) => {
                                 className="md:col-span-3 text-center"
                                 data-aos="fade-up"
                             >
-                                <h1 className="text-4xl font-bold mb-4">
+                                <h1 className="text-4xl font-bold mb-4 text-purple-800">
                                     {dataProblems.title}
                                 </h1>
                             </div>
@@ -255,6 +272,7 @@ const HomeComponent = ({ displayText }) => {
                             </h1>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
                             {DataHarga.map((kelas) => (
                                 <CardHarga
                                     key={kelas.id}
@@ -268,21 +286,10 @@ const HomeComponent = ({ displayText }) => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white text-gray-800 relative z-30 py-16">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <img
-                            src="./images/Reverse.png"
-                            alt="Logo"
-                            className="absolute inset-0 w-1/4 opacity-10 m-auto"
-                        />
-                        <div className="text-center" data-aos="fade-up">
-                            <h1 className="text-4xl font-bold mb-4">
-                                Testimoni
-                            </h1>
-                            <p className="text-lg mb-8">
-                                Dengar apa yang orang tua dan siswa kami katakan
-                                tentang kami.
-                            </p>
+                <div className="bg-white text-gray-800 py-16">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
+                        <div className="text-center mb-8" data-aos="fade-up">
+                            <h1 className="text-4xl font-bold mb-4">Apa Kata Mereka?</h1>
                         </div>
                         <Carousel
                             showArrows={true}
@@ -291,28 +298,47 @@ const HomeComponent = ({ displayText }) => {
                             showStatus={false}
                             autoPlay={true}
                             interval={5000}
+                            className="testimonial-carousel"
                         >
-                            {TestimoniData.map((testimonial, index) => (
-                                <div key={index} className="testimonial-item">
-                                    <img
-                                        src={testimonial.image}
-                                        alt={`${testimonial.name} photo`}
-                                        className="w-32 h-32 rounded-full mx-auto mb-4"
-                                    />
-
-                                    <p className="text-lg italic">
-                                        "{testimonial.text}"
-                                    </p>
-                                    <h2 className="text-xl font-semibold mt-4">
-                                        - {testimonial.name}, {testimonial.role}
-                                    </h2>
+                            {groupedTestimonials.map((group, index) => (
+                                <div key={index} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                    {group.map((testimonial, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="testimonial-item bg-white p-6 rounded-lg shadow-md "
+                                        >
+                                            <img
+                                                src={testimonial.image}
+                                                alt={`${testimonial.name} photo`}
+                                                className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+                                            />
+                                            <h2 className="text-lg font-semibold text-center">
+                                                {testimonial.name}
+                                            </h2>
+                                            <p className="text-gray-600 mb-2">
+                                                {testimonial.role}
+                                            </p>
+                                            <p className="text-gray-800">
+                                                {testimonial.text}
+                                            </p>
+                                            {/* <a
+                                                href=""
+                                                className="text-blue-500 mt-2 inline-block"
+                                            >
+                                                See More
+                                            </a> */}
+                                        </div>
+                                    ))}
                                 </div>
                             ))}
                         </Carousel>
+                        <div className="text-center mt-8">
+                            <a href="/Testimoni" className="text-blue-500">Lihat Semua Testimoni</a>
+                        </div>
                     </div>
                 </div>
-
                 <WhatsAppLink />
+
                 <div
                     className="md:col-span-1 text-center relative top-2"
                     data-aos="fade-left"

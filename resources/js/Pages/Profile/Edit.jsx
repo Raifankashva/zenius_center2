@@ -31,6 +31,11 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     </div>
                 </div>
             </div>
+            <footer className="bg-white border-t border-gray-200 shadow py-8 px-4 sm:px-6 lg:px-8">
+                <p className="text-center text-gray-500">
+                    &copy; 2024 Admin Dashboard - Made with ❤️ by Zema
+                </p>
+            </footer>
         </AuthenticatedLayout>
     );
 }
