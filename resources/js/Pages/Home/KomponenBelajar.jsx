@@ -1,7 +1,7 @@
 const KomponenBelajar = [
     {
         id: 1,
-        imgSrc: "/images/layanan/layanan1.png",
+        imgSrc: "/images/Fundamental.png",
         title: "Komponen Fundamental Learning",
         imgAlt: "Zenius Center",
         

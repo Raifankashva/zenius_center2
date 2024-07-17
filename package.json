@@ -28,6 +28,8 @@
         "aos": "^2.3.4",
         "chart.js": "^4.4.3",
         "react-chartjs-2": "^5.2.0",
+        "react-helmet": "^6.1.0",
+        "react-multi-carousel": "^2.8.5",
         "react-responsive-carousel": "^3.2.23"
     }
 }

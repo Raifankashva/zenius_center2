@@ -238,7 +238,7 @@ const AboutUs = () => {
                                     src="./images/wheels on the bus .mp4"
                                     title="Company Journey"
                                     frameBorder="0"
-                                    allow="accelerometer; clipboard-write; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                    allow="accelerometer; clipboard-write; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
                                     allowFullScreen
                                     autoPlay
                                 ></iframe>

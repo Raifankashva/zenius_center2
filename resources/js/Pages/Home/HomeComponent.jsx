@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Head } from "@inertiajs/react";
 import AppLayout from "@/Layouts/AppLayout";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -8,7 +9,7 @@ import "aos/dist/aos.css";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faCheck } from "@fortawesome/free-solid-svg-icons";
 import dataPisa from "./bardataPISA";
 import dataProblems from "./dataProblem";
 import WhatsAppLink from "./WhatsAppLink";
@@ -19,6 +20,8 @@ import DataHarga from "./DataHarga";
 import { Link } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
 import TestimoniData from "./TestimoniData";
+import Carousel2 from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const chunkArray = (arr, size) => {
     const chunkedArr = [];
@@ -27,6 +30,26 @@ const chunkArray = (arr, size) => {
     }
     return chunkedArr;
 };
+const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 3
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };  
+
+  
 
 const HomeComponent = ({ displayText }) => {
     useEffect(() => {
@@ -36,23 +59,49 @@ const HomeComponent = ({ displayText }) => {
     const groupedTestimonials = chunkArray(TestimoniData, 4);
 
     return (
-                <div className="relative">
+        
+        <div className="relative">
+                    <Head title="New Primagama Fatmawati Home" />
+    
             <AppLayout>
-                <div className="mx-auto ">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        <div
-                            className="md:col-span-3 text-center z-20"
-                            data-aos="fade-up"
-                        >
+            <div className="mx-auto w-full max-w-screen-xl">
+            <div className="grid grid-cols-1 gap-8 items-center">
+                <div className="text-center z-20" data-aos="fade-up">
+                    <Carousel 
+                        autoPlay 
+                        infiniteLoop 
+                        showThumbs={false} 
+                        showStatus={false} 
+                        showArrows={true}
+                        className="mx-auto mb-8 relative top-1 w-full"
+                    >
+                        <div className="w-full">
                             <img
                                 src="/images/spanduk 459x217 cmyk.jpg"
-                                alt="Logo"
-                                className="mx-auto mb-8 relative top-1"
+                                alt="Slide 1"
+                                className="object-cover w-full h-[600px]"
                             />
                         </div>
-                    </div>
+                        <div className="w-full">
+                            <img
+                                src="/images/main1.png"
+                                alt="Slide 2"
+                                className="object-cover w-full h-[600px]"
+                            />
+                        </div>
+                        <div className="w-full">
+                            <img
+                                src="/images/main2.jpg"
+                                alt="Slide 3"
+                                className="object-cover w-full h-[600px]"
+                            />
+                        </div>
+                        {/* Add more slides as needed */}
+                    </Carousel>
                 </div>
-
+                
+            </div>
+        </div>
                 <div className="relative overflow-hidden bg-gray-100 text-black py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center mb-8" data-aos="fade-up">
@@ -102,7 +151,7 @@ const HomeComponent = ({ displayText }) => {
                         </div>
                     </div>
                 </div>
-
+        
                 <div className="bg-white text-gray-800 relative z-30 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center bg-white">
@@ -265,43 +314,42 @@ const HomeComponent = ({ displayText }) => {
                     </div>
                 </div>
                 <div className="bg-gray-100 text-gray-800 relative z-30 py-16">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center" data-aos="fade-up">
-                            <h1 className="text-4xl font-bold mb-4">
-                                Biaya Investasi T.P 2024-2025
-                            </h1>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            
-                            {DataHarga.map((kelas) => (
-                                <CardHarga
-                                    key={kelas.id}
-                                    title={kelas.title}
-                                    price={kelas.price}
-                                    facilities={kelas.facilities}
-                                    sampai={kelas.sampai}
-                                    program={kelas.program}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center" data-aos="fade-up">
+        <h1 className="text-4xl font-bold mb-4">
+          Biaya Investasi T.P 2024-2025
+        </h1>
+      </div>
+      <Carousel2 responsive={responsive} autoPlay infinite arrows>
+        {DataHarga.map((kelas) => (
+          <div key={kelas.id} className="p-4">
+            <CardHarga
+              title={kelas.title}
+              price={kelas.price}
+              facilities={kelas.facilities}
+              sampai={kelas.sampai}
+              program={kelas.program}
+            />
+          </div>
+        ))}
+      </Carousel2>
+    </div>
+  </div>
                 <div className="bg-white text-gray-800 py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30">
                         <div className="text-center mb-8" data-aos="fade-up">
-                            <h1 className="text-4xl font-bold mb-4">Apa Kata Mereka?</h1>
+                            <h1 className="text-4xl font-bold mb-4">
+                                Apa Kata Mereka?
+                            </h1>
                         </div>
                         <Carousel
-                            showArrows={true}
-                            infiniteLoop={true}
-                            showThumbs={false}
-                            showStatus={false}
-                            autoPlay={true}
-                            interval={5000}
-                            className="testimonial-carousel"
+                            responsive={responsive} autoPlay infinite arrows
                         >
                             {groupedTestimonials.map((group, index) => (
-                                <div key={index} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <div
+                                    key={index}
+                                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                                >
                                     {group.map((testimonial, idx) => (
                                         <div
                                             key={idx}
@@ -333,7 +381,9 @@ const HomeComponent = ({ displayText }) => {
                             ))}
                         </Carousel>
                         <div className="text-center mt-8">
-                            <a href="/Testimoni" className="text-blue-500">Lihat Semua Testimoni</a>
+                            <a href="/Testimoni" className="text-blue-500">
+                                Lihat Semua Testimoni
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@inertiajs/react";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
+import { Helmet } from "react-helmet";
 
 export default function Authenticated({ user, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
@@ -9,6 +10,18 @@ export default function Authenticated({ user, header, children }) {
 
     return (
         <div className="flex bg-gray-100 min-h-screen">
+            <Helmet>
+                <title>NewPrimagama Fatmawati</title>
+                <meta
+                    name="description"
+                    content="Bimble Terbaik di Indonesia"
+                />
+                <link
+                    rel="shortcut icon"
+                    href="/images/Reverse.png"
+                    type="image/x-icon"
+                />
+            </Helmet>
             <nav className="bg-white w-64 h-screen border-r border-gray-200 flex flex-col fixed">
                 <div className="flex items-center justify-center h-16 border-b border-gray-200">
                     <Link href="/">

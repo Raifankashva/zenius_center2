@@ -22,44 +22,46 @@ const Footer = () => {
                         <h3 className="text-lg font-bold mb-4">Quick Links</h3>
                         <ul>
                             <li>
-                                <Link
+                                <a
                                     href="/About"
                                     className="hover:text-gray-400"
                                 >
                                     About Us
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/Services"
                                     className="hover:text-gray-400"
                                 >
                                     Services
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="#Contact"
                                     className="hover:text-gray-400"
                                 >
                                     Contact
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="/FAQ"
                                     className="hover:text-gray-400"
                                 >
                                     FAQ
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link
+                                <a
                                     href="https://www.zenius.net/blog/"
                                     className="hover:text-gray-400"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     Zenius Blog
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>

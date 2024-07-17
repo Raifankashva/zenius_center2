@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // dataPisa.js
 const dataPisa = {
     barData: {

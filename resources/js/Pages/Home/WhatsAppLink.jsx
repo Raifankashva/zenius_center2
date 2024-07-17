@@ -1,6 +1,6 @@
 const WhatsAppLink = () => {
     const phoneNumber = "62818936487"; // Nomor WhatsApp tanpa karakter '+'
-    const message = "hai"; // Pesan yang ingin dikirim
+    const message = "Halo aku sudah melihat Penawaran yang ada dan aku sangat tertarik dengan New Primagama Fatmawati"; // Pesan yang ingin dikirim
 
     // Membuat URL WhatsApp dengan nomor telepon dan pesan
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
